@@ -1,17 +1,18 @@
 clf
-molecularweight  = 285.33;
-LitersOfPlasma = 5;
-Morphine = 0;
-Injection = 1.25;
-Intake = Injection/molecularweight/LitersOfPlasma;
-M3G = 0;
-M6G = 0;
-a = 12;
+molecularweight  = 285.33; % molecular weight of morphine
+LitersOfPlasma = 5; % liters of plasma in the body
+Morphine = 0; % initial morphine concentration
+Injection = 1.25; % milligrams of morphine
+Intake = Injection/molecularweight/LitersOfPlasma; % intake of morphine
+M3G = 0; % initial m3g concentration
+M6G = 0; % initial m6g concentration
+a = 12; % length of simulation
 hold on
+% initialize datasets
 M6 = [1:a];
 M3 = [1:a];
 MM = [1:a];
-q = [1:a];
+q = [1:a]; % time
 for i = 1:12
 if i < 5
     MorphineX = (Intake);
