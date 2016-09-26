@@ -15,7 +15,7 @@ MM = [1:a];
 q = [1:a]; % time
 for i = 1:12
 if i < 5
-    MorphineX = (Intake);
+    MorphineX = (Intake); %this is the initial intake of morphine for the first 5 iterations
     
 else MorphineX = 0;
     
