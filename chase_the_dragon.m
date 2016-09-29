@@ -2,11 +2,14 @@ function [Time, Stocks] = chase_the_dragon()
     % simulates stock values of morphine, m3g, m6g in the bloodstream
     
     % time stuff
-    time_step = 0.5; % in hours
+    time_step = 1; % in hours
     simulation_length = 12; % in hours
     
     % molecular weight
     morphine_weight = 285.33; % in grams / mol
+    
+    % blood plasma
+    plasma_vol = 3; % in liters (2.7 - 3.0)
     
     % initial values
     initial_m = 0;   % in nmols / liter
@@ -62,7 +65,7 @@ function [Time, Stocks] = chase_the_dragon()
         if t < d_length
             if mod(t, d_frequency) == 0
                 morphine_flow = d_quantity / (d_frequency * d_length); % in grams / time
-                morphine_flow = morphine_flow / morphine_weight * 1e9; % in nmols / time
+                morphine_flow = morphine_flow / morphine_weight * 1e9 / plasma_vol; % in nmols / liter / time
             end
         end
         
