@@ -1,6 +1,6 @@
 clf
 molecularweight  = 285.33;
-LitersOfPlasma = 5;
+LitersOfPlasma = 2.7;
 Morphine = 0;
 Injection = 1.25;
 Intake = Injection/(molecularweight*LitersOfPlasma)*1000000000;
@@ -15,6 +15,8 @@ q = [1:a];
 M3(1) = .001;
 M6(1) = .001;
 MM(1) = .001;
+M6G1 = 0;
+M3G1 = 0;
 for i = 2:a
 if i < 5
     MorphineX = (Intake)*((2).^(-i/.28));  
